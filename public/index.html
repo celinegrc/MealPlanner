@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <script>
+    if (window.location.href.indexOf("github.io") > -1 && window.location.href.indexOf("/404.html") === -1) {
+      window.location.href = "./404.html?" + window.location.href;
+    }
+  </script>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
