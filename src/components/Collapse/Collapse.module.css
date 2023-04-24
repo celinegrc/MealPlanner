@@ -1,0 +1,49 @@
+.collapse_container{
+    font-family:'inter';
+    color: #3d3636;
+    width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 25px;
+    border-radius: 8px;
+    background: rgb(142, 190, 194);
+    font-family: 'Inter', sans-serif;
+    border: 2px solid  #3d3636;
+}
+
+.arrow_open{
+    height:15px;
+    width:auto;
+}
+
+.open_collapse:hover{
+    cursor:pointer;
+    border: 1px solid antiquewhite;
+}
+.open_collapse{
+    border: 1px solid antiquewhite;
+    margin:5px;
+    padding-bottom: 10px;
+}
+
+.open_collapse:hover .arrow_open{
+    animation: bounce 0.5s linear 3 alternate;
+    animation-play-state: running;
+}
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+.see_recipe{
+    margin:10px;
+    width:100%;
+}
+

@@ -1,0 +1,59 @@
+.recipe_title{
+    font-family:'inter';
+    color: #3d3636;
+}
+
+.recipe_title_span{
+    font-weight: 600;
+}
+.ingredientList, .mesureList{
+    text-align:left;
+    padding:0px;
+    width: 45%;
+    font-weight: 600;
+}
+ .ingredient_mesure_container{
+    display:flex;
+    justify-content: center;
+    font-family:'inter';
+    color: #3d3636;
+    width: 60%;
+    margin:auto;
+ }
+
+ .recipe_container{
+    font-family:'inter';
+    color: #3d3636;
+    width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 25px;
+    border-radius: 8px;
+    background: rgb(142, 190, 194);
+    font-family: 'Inter', sans-serif;
+    border: 2px solid  #3d3636;
+ }
+
+ ul{
+    list-style: none;
+ }
+
+ .recipe_image{
+    width: 300px;
+    height:auto;
+    border-radius: 5px;
+ }
+.recipe_instructions{
+    line-height:1.5;
+}
+ .print{
+    display: flex;
+    justify-content: flex-end;
+    font-weight:600;
+ }
+
+ .print:hover{
+    cursor:pointer;
+    color:black;
+ }
+
+
