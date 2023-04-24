@@ -77,140 +77,153 @@ return (
     <Banner />
     <div className={styles.form_container}>
         <form>
-        < section className ={styles.day1_container}>
-            <div>
-            <div className ={styles.day_container}>
-            <label>Lundi</label>
+            <section className={styles.day1_container}>
+        <div>
+            <div className={styles.day_container}>
+            <label htmlFor="Lundi">Lundi</label>
             <input
                 value={inputValues.LundiMidi}
                 onChange={handleInputChange}
-                type='text'
-                name='LundiMidi'
-                placeholder='Midi'
+                type="text"
+                name="LundiMidi"
+                id="Lundi"
+                placeholder="Midi"
             />
             <input
                 value={inputValues.LundiSoir}
                 onChange={handleInputChange}
-                type='text'
-                name='LundiSoir'
-                placeholder='Soir'
+                type="text"
+                name="LundiSoir"
+                id="Lundi"
+                placeholder="Soir"
             />
             </div>
-            <div className ={styles.day_container}>
-            <label>Mardi</label>
+            <div className={styles.day_container}>
+            <label htmlFor="Mardi">Mardi</label>
             <input
                 value={inputValues.MardiMidi}
                 onChange={handleInputChange}
-                type='text'
-                name='MardiMidi'
-                placeholder='Midi'
+                type="text"
+                name="MardiMidi"
+                id="Mardi"
+                placeholder="Midi"
             />
             <input
                 value={inputValues.MardiSoir}
                 onChange={handleInputChange}
-                type='text'
-                name='MardiSoir'
-                placeholder='Soir'
+                type="text"
+                name="MardiSoir"
+                id="Mardi"
+                placeholder="Soir"
             />
             </div>
-            <div className ={styles.day_container}>
-            <label>Mercredi</label>
+            <div className={styles.day_container}>
+            <label htmlFor="Mercredi">Mercredi</label>
             <input
                 value={inputValues.MercrediMidi}
                 onChange={handleInputChange}
-                type='text'
-                name='MercrediMidi'
-                placeholder='Midi'
+                type="text"
+                name="MercrediMidi"
+                id="Mercredi"
+                placeholder="Midi"
             />
             <input
                 value={inputValues.MercrediSoir}
                 onChange={handleInputChange}
-                type='text'
-                name='MercrediSoir'
-                placeholder='Soir'
+                type="text"
+                name="MercrediSoir"
+                id="Mercredi"
+                placeholder="Soir"
             />
             </div>
-            <div className ={styles.day_container}>
-            <label>Jeudi</label>
+            <div className={styles.day_container}>
+            <label htmlFor="Jeudi">Jeudi</label>
             <input
                 value={inputValues.JeudiMidi}
                 onChange={handleInputChange}
-                type='text'
-                name='JeudiMidi'
-                placeholder='Midi'
+                type="text"
+                name="JeudiMidi"
+                id="Jeudi"
+                placeholder="Midi"
             />
             <input
                 value={inputValues.JeudiSoir}
                 onChange={handleInputChange}
-                type='text'
-                name='JeudiSoir'
-                placeholder='Soir'
+                type="text"
+                name="JeudiSoir"
+                id="Jeudi"
+                placeholder="Soir"
             />
             </div>
         </div>
-        <div >
-            <div className ={styles.day_container}>
-            <label>Vendredi</label>
+        <div>
+            <div className={styles.day_container}>
+            <label htmlFor="Vendredi">Vendredi</label>
             <input
                 value={inputValues.VendrediMidi}
                 onChange={handleInputChange}
-                type='text'
-                name='VendrediMidi'
-                placeholder='Midi'
+                type="text"
+                name="VendrediMidi"
+                id="Vendredi"
+                placeholder="Midi"
             />
-             <input
+            <input
                 value={inputValues.VendrediSoir}
                 onChange={handleInputChange}
-                type='text'
-                name='VendrediSoir'
-                placeholder='Soir'
+                type="text"
+                name="VendrediSoir"
+                id="Vendredi"
+                placeholder="Soir"
             />
             </div>
-            <div className ={styles.day_container}>
-            <label>Samedi</label>
-            <input
-                value={inputValues.SamediMidi}
-                onChange={handleInputChange}
-                type='text'
-                name='SamediMidi'
-                placeholder='Midi'
-            />
-             <input
-                value={inputValues.SamediSoir}
-                onChange={handleInputChange}
-                type='text'
-                name='SamediSoir'
-                placeholder='Soir'
-            />
+                <div className ={styles.day_container}>
+                <label htmlFor="Samedi">Samedi</label>
+                <input
+                    value={inputValues.SamediMidi}
+                    onChange={handleInputChange}
+                    type='text'
+                    id="Samedi"
+                    name='SamediMidi'
+                    placeholder='Midi'
+                />
+                <input
+                    value={inputValues.SamediSoir}
+                    onChange={handleInputChange}
+                    type='text'
+                    id="Samedi"
+                    name='SamediSoir'
+                    placeholder='Soir'
+                />
+                </div>
+                <div className ={styles.day_container}>
+                <label htmlFor="Dimanche">Dimanche</label>
+                <input
+                    value={inputValues.DimancheMidi}
+                    onChange={handleInputChange}
+                    type='text'
+                    id="Dimanche"
+                    name='DimancheMidi'
+                    placeholder='Midi'
+                />
+                <input
+                    value={inputValues.DimancheSoir}
+                    onChange={handleInputChange}
+                    type='text'
+                    id="Dimanche"
+                    name='DimancheSoir'
+                    placeholder='Soir'
+                />
+                </div>
+                <div className={styles.button_container}>
+                    <button onClick={(e) => generatePdf(e,inputValues)}>Générer PDF</button>
+                    <button onClick ={clear}>Effacer</button>
+                </div>
             </div>
-            <div className ={styles.day_container}>
-            <label>Dimanche</label>
-            <input
-                value={inputValues.DimancheMidi}
-                onChange={handleInputChange}
-                type='text'
-                name='DimancheMidi'
-                placeholder='Midi'
-            />
-             <input
-                value={inputValues.DimancheSoir}
-                onChange={handleInputChange}
-                type='text'
-                name='DimancheSoir'
-                placeholder='Soir'
-            />
-            </div>
-            <div className={styles.button_container}>
-                <button onClick={(e) => generatePdf(e,inputValues)}>Générer PDF</button>
-                <button onClick ={clear}>Effacer</button>
-            </div>
-        </div>
         </section>
         <Link to ='/idee-repas'><p className={styles.link_home}>Je n'ai plus d'idées</p></Link>
         </form>
     </div>
     </>
-);
-}
+)}
 
 export default Form;

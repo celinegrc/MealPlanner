@@ -69,7 +69,7 @@ function Recipe() {
       <Collapse 
         collapseTitle = {<div >
                           <h1 
-                            className={styles.recipe_title}>Idée repas du jour : <span className={styles.recipe_title_span}>{recipe.strMeal}</span>
+                            className={styles.recipe_title}>Idée repas : <span className={styles.recipe_title_span}>{recipe.strMeal}</span>
                           </h1>
                           <img  className={styles.recipe_image}src={recipe.strMealThumb} alt={recipe.strMeal} />
                         </div>} 
