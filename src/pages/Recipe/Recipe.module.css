@@ -56,4 +56,12 @@
     color:black;
  }
 
+ @media(max-width:767px){
+   .recipe_image{
+      width: 80%;
+      height:auto;
+      border-radius: 5px;
+   }
+ }
+
 

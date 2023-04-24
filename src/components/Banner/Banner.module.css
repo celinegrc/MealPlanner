@@ -22,3 +22,19 @@ img{
     font-size:70px;
     color : rgb(90, 163, 170);
 }
+
+@media (max-width:767px){
+    
+    .title{
+        font-size: 40px;
+    }
+    .cursive{
+        font-size:50px;
+    }
+    .banniere{
+    Flex-direction:column;
+    margin:20px;
+    width:90%;
+    }
+
+}

@@ -18,6 +18,7 @@ p{
 }
 
 .button_home{
+    height:115px;
     display:flex;
     align-items: center;
     font-family:'inter';
@@ -35,6 +36,32 @@ p{
 }
 .button_home:hover{
     cursor: pointer;
-   /* box-shadow: -6px -6px 5px #3d3636;*/
     transform : translateY(10px); 
 }
+
+@media (max-width:767px){
+
+    .button_container{
+        display:flex;
+        font-size: 20px;
+        flex-direction:column;
+        width:90%;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px auto;
+        gap:20px;
+        box-sizing:border-box;
+    }
+    .button_home{
+        width:90%;
+        font-size:22px;
+        display:flex;
+        justify-content: center;
+    }
+    p{
+        font-size: 20px;
+        width:80%;
+        margin:20px auto 20px auto;
+    }
+}
+

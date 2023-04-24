@@ -100,3 +100,11 @@ a{
     transform: translateX(0);
   }
 }
+
+@media (max-width:767px){
+  .form_container{
+    width:90%;
+    margin: 0 auto 20px auto;
+    box-sizing:border-box;
+  } 
+}
