@@ -6,7 +6,7 @@ function Banner(){
     return(
         
         <header className={styles.banniere}>
-        <Link to='/' className={styles.title}>Mes menus hebdo avec <span className={styles.cursive}>Meal Planner</span></ Link>
+        <h1 className={styles.title}>Weekly menus with <Link to='/' className={styles.cursive}>Meal Planner</Link></ h1>
         <img src={assiette} alt=""/>
         </header>
     )

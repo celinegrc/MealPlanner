@@ -4,15 +4,14 @@ import styles from './Recipe.module.css'
 import Collapse from '../../components/Collapse/Collapse';
 import DocumentRecettes from '../../components/Document/DocumentRecettes';
 import {  pdf  } from '@react-pdf/renderer';
-
-
+import { Link } from 'react-router-dom'
 
 function Recipe() {
 
   const [recipe, setRecipe] = useState(null);  
+  const API_URL = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
   useEffect(() => {
-    const API_URL = 'https://www.themealdb.com/api/json/v1/1/random.php?language=fr';
     fetch(API_URL)
       .then((response) => response.json())
       .then((data) => {
@@ -26,6 +25,17 @@ function Recipe() {
   if (!recipe) {
     return <div>Loading...</div>;
   }
+
+  function handleClick() {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        return setRecipe(data.meals[0]);
+      })
+      .catch((error) => console.error(error));
+  }
+
 
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
@@ -68,15 +78,19 @@ function Recipe() {
       <Banner/>
       <Collapse 
         collapseTitle = {<div >
+                          <div className={styles.container_intro_collapse}> 
+                            <Link to='/form'>Back to form</Link>
+                            <div onClick = {handleClick} className = {styles.autre_recette}>Change recipe</div>
+                          </div>
                           <h1 
-                            className={styles.recipe_title}>Idée repas : <span className={styles.recipe_title_span}>{recipe.strMeal}</span>
+                            className={styles.recipe_title}>Meal idea : <span className={styles.recipe_title_span}>{recipe.strMeal}</span>
                           </h1>
                           <img  className={styles.recipe_image}src={recipe.strMealThumb} alt={recipe.strMeal} />
                         </div>} 
         collapseContent = {<div>
                               <div className ={styles.print}  
                                 onClick={() => generateRecipePdf({titleRecipe, ingredients, mesures, instructions})}>
-                                  Télécharger le recette
+                                  Download recipe
                               </div>
                               <div className={styles.ingredient_mesure_container}>
                                 <ul className={styles.ingredientList}>

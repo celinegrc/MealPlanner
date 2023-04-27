@@ -1,10 +1,33 @@
 .recipe_title{
     font-family:'inter';
-    color: #3d3636;
+    color: #4e4949;
+}
+/*.autre_recette{
+   color:rgb(2, 21, 22);
+   font-weight:600;
+   font-size:14px;
+   text-align: right;
+   margin-right:0;
+   margin-top:0;
+   margin-bottom:0;
+}*/
+.autre_recette:hover {
+   cursor:pointer;
+   text-decoration: underline;
 }
 
-.recipe_title_span{
-    font-weight: 600;
+.container_intro_collapse{
+   display:flex;
+   width:100%;
+   justify-content: space-between;
+   color:#3d3636;
+}
+.container_intro_collapse a{
+   color:#3d3636;
+}
+
+.container_intro_collapse a:hover{
+   text-decoration: underline;
 }
 .ingredientList, .mesureList{
     text-align:left;

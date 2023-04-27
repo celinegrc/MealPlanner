@@ -10,22 +10,34 @@
     border: 2px solid  #3d3636;
 }
 
-.arrow_open{
-    height:15px;
-    width:auto;
+.arrow_open {
+  transform: rotate(180deg);
+  height: 15px;
+  width: auto;
+  transition: transform 0.5s ease;
+}
+.arrow_open_up{
+  height: 15px;
+  width: auto;
+  transition: transform 2s ease-in;
+  transform: rotate(180deg);
 }
 
 .open_collapse:hover{
-    cursor:pointer;
-    border: 1px solid antiquewhite;
+    cursor:pointer;  
 }
 .open_collapse{
     border: 1px solid antiquewhite;
-    margin:5px;
+    margin:5px auto;
+   /* margin:5px;*/
     padding-bottom: 10px;
+    width:100%;
+    transition: width 0.5s ease;
 }
-
 .open_collapse:hover .arrow_open{
+  transform: rotate(360deg);
+}
+/*.open_collapse:hover .arrow_open{
     animation: bounce 0.5s linear 3 alternate;
     animation-play-state: running;
 }
@@ -40,7 +52,7 @@
     100% {
       transform: translateX(0);
     }
-  }
+  }*/
 
 .see_recipe{
     margin:10px;

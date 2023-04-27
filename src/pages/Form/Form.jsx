@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Form.module.css'
 import Banner from '../../components/Banner/Banner';
 import DocumentPdf from '../../components/Document/Document'
@@ -19,13 +19,14 @@ const pdfBlob = pdf(documentData).toBlob();
     const objectUrl = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = objectUrl;
-    link.download = 'document.pdf';
+    link.download = 'meal_planner.pdf';
     link.click();
     URL.revokeObjectURL(objectUrl);
   });
 }
 
 function Form (){
+
 const [inputValues, setInputValues] = useState({
 LundiMidi: '',
 LundiSoir: '',
@@ -43,7 +44,21 @@ DimancheMidi: '',
 DimancheSoir: ''
 });
 
-  
+
+
+useEffect(() => {
+    const savedInputValues = JSON.parse(localStorage.getItem('inputValues'));
+    if (savedInputValues) {
+      setInputValues(savedInputValues);
+    }
+  }, []);
+
+
+  useEffect(() => {
+    localStorage.setItem('inputValues', JSON.stringify(inputValues));
+  }, [inputValues]);
+
+  console.log(localStorage)
 function clear(e){
     e.preventDefault();
     setInputValues({
@@ -69,7 +84,8 @@ function handleInputChange(e) {
     setInputValues(prevState => ({
         ...prevState,
         [name]: value,
-    }));
+    } 
+    ));
 }
 
 return (
@@ -80,14 +96,14 @@ return (
             <section className={styles.day1_container}>
         <div>
             <div className={styles.day_container}>
-            <label htmlFor="Lundi">Lundi</label>
+            <label htmlFor="Lundi">Monday</label>
             <input
                 value={inputValues.LundiMidi}
                 onChange={handleInputChange}
                 type="text"
                 name="LundiMidi"
                 id="Lundi"
-                placeholder="Midi"
+                placeholder="Lunch"
             />
             <input
                 value={inputValues.LundiSoir}
@@ -95,37 +111,18 @@ return (
                 type="text"
                 name="LundiSoir"
                 id="Lundi"
-                placeholder="Soir"
+                placeholder="Dinner"
             />
             </div>
             <div className={styles.day_container}>
-            <label htmlFor="Mardi">Mardi</label>
-            <input
-                value={inputValues.MardiMidi}
-                onChange={handleInputChange}
-                type="text"
-                name="MardiMidi"
-                id="Mardi"
-                placeholder="Midi"
-            />
-            <input
-                value={inputValues.MardiSoir}
-                onChange={handleInputChange}
-                type="text"
-                name="MardiSoir"
-                id="Mardi"
-                placeholder="Soir"
-            />
-            </div>
-            <div className={styles.day_container}>
-            <label htmlFor="Mercredi">Mercredi</label>
+            <label htmlFor="Mercredi">Wednesday</label>
             <input
                 value={inputValues.MercrediMidi}
                 onChange={handleInputChange}
                 type="text"
                 name="MercrediMidi"
                 id="Mercredi"
-                placeholder="Midi"
+                placeholder="Lunch"
             />
             <input
                 value={inputValues.MercrediSoir}
@@ -133,39 +130,18 @@ return (
                 type="text"
                 name="MercrediSoir"
                 id="Mercredi"
-                placeholder="Soir"
+                placeholder="Dinner"
             />
             </div>
             <div className={styles.day_container}>
-            <label htmlFor="Jeudi">Jeudi</label>
-            <input
-                value={inputValues.JeudiMidi}
-                onChange={handleInputChange}
-                type="text"
-                name="JeudiMidi"
-                id="Jeudi"
-                placeholder="Midi"
-            />
-            <input
-                value={inputValues.JeudiSoir}
-                onChange={handleInputChange}
-                type="text"
-                name="JeudiSoir"
-                id="Jeudi"
-                placeholder="Soir"
-            />
-            </div>
-        </div>
-        <div>
-            <div className={styles.day_container}>
-            <label htmlFor="Vendredi">Vendredi</label>
+            <label htmlFor="Vendredi">Friday</label>
             <input
                 value={inputValues.VendrediMidi}
                 onChange={handleInputChange}
                 type="text"
                 name="VendrediMidi"
                 id="Vendredi"
-                placeholder="Midi"
+                placeholder="Lunch"
             />
             <input
                 value={inputValues.VendrediSoir}
@@ -173,18 +149,77 @@ return (
                 type="text"
                 name="VendrediSoir"
                 id="Vendredi"
-                placeholder="Soir"
+                placeholder="Dinner"
+            />
+            </div>
+            <div className={styles.day_container}>
+            <label htmlFor="Dimanche">Sunday</label>
+            <input
+                value={inputValues.DimancheMidi}
+                onChange={handleInputChange}
+                type="text"
+                name="DimancheMidi"
+                id="Dimanche"
+                placeholder="Lunch"
+            />
+            <input
+                value={inputValues.DimancheSoir}
+                onChange={handleInputChange}
+                type="text"
+                name="DimancheSoir"
+                id="Dimanche"
+                placeholder="Dinner"
+            />
+            </div>
+        </div>
+        <div>
+            <div className={styles.day_container}>
+            <label htmlFor="Mardi">Tuesday</label>
+            <input
+                value={inputValues.MardiMidi}
+                onChange={handleInputChange}
+                type="text"
+                name="MardiiMidi"
+                id="Mardi"
+                placeholder="Lunch"
+            />
+            <input
+                value={inputValues.MardiSoir}
+                onChange={handleInputChange}
+                type="text"
+                name="MardiSoir"
+                id="Mardi"
+                placeholder="Dinner"
             />
             </div>
                 <div className ={styles.day_container}>
-                <label htmlFor="Samedi">Samedi</label>
+                <label htmlFor="Jeudi">Thursday</label>
+                <input
+                    value={inputValues.JeudiMidi}
+                    onChange={handleInputChange}
+                    type='text'
+                    id="Jeudi"
+                    name='JeudiMidi'
+                    placeholder='Lunch'
+                />
+                <input
+                    value={inputValues.JeudiSoir}
+                    onChange={handleInputChange}
+                    type='text'
+                    id="Jeudi"
+                    name='JeudiSoir'
+                    placeholder='Dinner'
+                />
+                </div>
+                <div className ={styles.day_container}>
+                <label htmlFor="Samedi">Saturday</label>
                 <input
                     value={inputValues.SamediMidi}
                     onChange={handleInputChange}
                     type='text'
                     id="Samedi"
                     name='SamediMidi'
-                    placeholder='Midi'
+                    placeholder='Lunch'
                 />
                 <input
                     value={inputValues.SamediSoir}
@@ -192,35 +227,16 @@ return (
                     type='text'
                     id="Samedi"
                     name='SamediSoir'
-                    placeholder='Soir'
-                />
-                </div>
-                <div className ={styles.day_container}>
-                <label htmlFor="Dimanche">Dimanche</label>
-                <input
-                    value={inputValues.DimancheMidi}
-                    onChange={handleInputChange}
-                    type='text'
-                    id="Dimanche"
-                    name='DimancheMidi'
-                    placeholder='Midi'
-                />
-                <input
-                    value={inputValues.DimancheSoir}
-                    onChange={handleInputChange}
-                    type='text'
-                    id="Dimanche"
-                    name='DimancheSoir'
-                    placeholder='Soir'
+                    placeholder='Dinner'
                 />
                 </div>
                 <div className={styles.button_container}>
-                    <button onClick={(e) => generatePdf(e,inputValues)}>Générer PDF</button>
-                    <button onClick ={clear}>Effacer</button>
+                    <button onClick={(e) => generatePdf(e,inputValues)}>Create PDF</button>
+                    <button onClick ={clear}>Erase</button>
                 </div>
             </div>
         </section>
-        <Link to ='/idee-repas'><p className={styles.link_home}>Je n'ai plus d'idées</p></Link>
+        <Link to ='/idee-repas'><p className={styles.link_home}>No more ideas ?</p></Link>
         </form>
     </div>
     </>

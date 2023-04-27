@@ -15,6 +15,7 @@ img{
     justify-content: center;
     align-items: center;
     margin: 50px 20px 20px auto;
+    position:relative;
 }
 
 .cursive{
@@ -22,6 +23,7 @@ img{
     font-size:70px;
     color : rgb(90, 163, 170);
 }
+
 
 @media (max-width:767px){
     

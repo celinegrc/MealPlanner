@@ -11,15 +11,14 @@ const [isOpen,setIsOpen]= useState(false);
             {collapseTitle}
             </div >
             <div className={styles.open_collapse} onClick={()=>setIsOpen(prevState => !prevState)}> 
-            <h2 className={styles.see_recipe}>Voir la recette</h2>
-            <img className ={styles.arrow_open}src= {arrowOpen} alt="ouvrir" />
+            <h2 className={styles.see_recipe}>View recipe</h2>
+             <img className={` ${isOpen ? styles.arrow_open_up : styles.arrow_open}`} src={arrowOpen} alt="ouvrir" />
             </div>
 
             {isOpen &&
                  <div className={styles.collapse_content} >
                     {collapseContent}
                 </div>}
-            
         </div>
     )
 }

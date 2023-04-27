@@ -85,7 +85,7 @@ a{
 }
 
 .link_home:hover {
-  animation: bounce 0.2s linear 3 alternate;
+  animation: bounce 0.3s linear 3 alternate;
   animation-play-state: running;
 }
 
