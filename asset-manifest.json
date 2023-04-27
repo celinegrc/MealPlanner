@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MealPlanner/static/css/main.6709b13d.css",
-    "main.js": "/MealPlanner/static/js/main.f05f7a27.js",
+    "main.css": "/MealPlanner/static/css/main.b6b846de.css",
+    "main.js": "/MealPlanner/static/js/main.fc1d9828.js",
     "static/js/787.8b926064.chunk.js": "/MealPlanner/static/js/787.8b926064.chunk.js",
     "static/media/assiette.png": "/MealPlanner/static/media/assiette.e5a3271a1bd48d301fc4.png",
     "index.html": "/MealPlanner/index.html",
-    "main.6709b13d.css.map": "/MealPlanner/static/css/main.6709b13d.css.map",
-    "main.f05f7a27.js.map": "/MealPlanner/static/js/main.f05f7a27.js.map",
+    "main.b6b846de.css.map": "/MealPlanner/static/css/main.b6b846de.css.map",
+    "main.fc1d9828.js.map": "/MealPlanner/static/js/main.fc1d9828.js.map",
     "787.8b926064.chunk.js.map": "/MealPlanner/static/js/787.8b926064.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6709b13d.css",
-    "static/js/main.f05f7a27.js"
+    "static/css/main.b6b846de.css",
+    "static/js/main.fc1d9828.js"
   ]
 }
