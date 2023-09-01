@@ -179,7 +179,7 @@ return (
                 value={inputValues.MardiMidi}
                 onChange={handleInputChange}
                 type="text"
-                name="MardiiMidi"
+                name="MardiMidi"
                 id="Mardi"
                 placeholder="Lunch"
             />
